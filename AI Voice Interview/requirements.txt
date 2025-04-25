@@ -1,0 +1,10 @@
+Flask>=2.0
+Flask-SocketIO>=5.0
+python-dotenv>=0.15
+langchain>=0.1,<0.2 # Pin major Langchain version for stability
+langchain-google-genai>=0.1 # Check for latest compatible version
+langchain_community>=0.0.20 # Check for latest compatible version
+pydantic==1.* # Important: Use Pydantic v1 as in the original script
+PyPDF2>=3.0 # Dependency for PyPDFLoader, ensure it's compatible
+google-api-python-client # Often needed by google genai
+eventlet # Or gevent, needed for Flask-SocketIO production/async

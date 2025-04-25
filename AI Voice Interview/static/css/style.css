@@ -1,0 +1,249 @@
+/* Gemini Dark Mode Inspired Styles */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #131314; /* Very dark gray background */
+    color: #E8EAED; /* Light gray text */
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #F8F9FA; /* Slightly brighter white for headers */
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.upload-area {
+    border: 2px dashed #5F6368; /* Darker border */
+    padding: 30px;
+    text-align: center;
+    background-color: #202124; /* Darker card background */
+    margin: 0 auto 30px auto; /* Center horizontally */
+    cursor: pointer;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    color: #E8EAED; /* Ensure text inside is light */
+    box-sizing: border-box;
+}
+
+.upload-area:hover, .upload-area.highlight {
+    border-color: #8AB4F8; /* Gemini blue accent for border */
+    background-color: #303134; /* Slightly lighter dark background on hover */
+}
+
+.upload-area p {
+    margin: 10px 0;
+}
+
+.upload-area button {
+    padding: 10px 15px;
+    background-color: #8AB4F8; /* Gemini blue accent */
+    color: #202124; /* Dark text for contrast on blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: 500; /* Slightly bolder */
+    transition: background-color 0.2s ease;
+}
+
+.upload-area button:hover {
+    background-color: #528ff0; /* Slightly darker blue on hover */
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Agent and Dialogue Styles */
+#agent-dialogue-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto 30px auto; /* Center horizontally */
+    max-width: 900px;
+    width: 100%;
+    padding: 10px;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+#agent-container {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: visible;
+}
+
+.agent-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+#dialogue-box-container {
+    flex: 1 1 300px;
+    min-width: 250px;
+    align-self: center;
+}
+
+#dialogue-box {
+    background-color: #202124; /* Darker card background */
+    border: 1px solid #5F6368; /* Darker border */
+    border-radius: 10px;
+    padding: 15px 20px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Adjusted shadow for dark */
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+/* Dialogue box tail (optional) */
+#dialogue-box::before {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    left: -14px;
+    border-width: 10px 15px 10px 0;
+    border-style: solid;
+    /* Match dialogue background and border colors */
+    border-color: transparent #202124 transparent transparent;
+    filter: drop-shadow(-1px 1px 0px #5F6368);
+    display: block;
+    width: 0;
+}
+
+#dialogue-text {
+    margin: 0;
+    line-height: 1.5;
+    color: #E8EAED; /* Light text */
+    width: 100%;
+}
+
+/* Interview Controls */
+.interview-controls {
+    background-color: #202124; /* Darker card background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Adjusted shadow for dark */
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 30px auto; /* Center horizontally */
+    border: 1px solid #5F6368; /* Darker border */
+    box-sizing: border-box;
+}
+
+.status {
+    text-align: center;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #9AA0A6; /* Dimmer gray */
+    min-height: 1.2em;
+    font-size: 0.9em;
+}
+
+#speakButton {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: #8AB4F8; /* Gemini blue accent */
+    color: #202124; /* Dark text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#speakButton:disabled {
+    background-color: #3C4043; /* Darker disabled gray */
+    color: #9AA0A6; /* Muted text color */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#speakButton:not(:disabled):hover {
+    background-color: #528ff0; /* Darker blue on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow */
+}
+
+#speakButton.listening {
+    background-color: #F28B82; /* Gemini red/pink for active/listening */
+    color: #202124; /* Dark text */
+}
+
+#speakButton.listening:hover {
+    background-color: #E16358; /* Darker red/pink on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #agent-dialogue-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #agent-container {
+        height: 300px;
+        max-width: 300px;
+    }
+    
+    #dialogue-box-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    #dialogue-box::before {
+        display: none; /* Hide tail on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .upload-area {
+        padding: 15px;
+    }
+    
+    #agent-container {
+        height: 250px;
+        max-width: 250px;
+    }
+}

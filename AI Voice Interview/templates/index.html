@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Interviewer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Voice Interview Simulation</h1>
+
+        <div id="upload-area" class="upload-area">
+            <p>Drag & Drop your Resume PDF here</p>
+            <p>or</p>
+            <input type="file" id="resume-file" accept=".pdf">
+            <button type="button" onclick="document.getElementById('resume-file').click();">Select PDF File</button>
+        </div>
+
+        <div id="agent-dialogue-container">
+            <div id="agent-container">
+                <div class="agent-wrapper">
+                    <spline-viewer 
+                        url="https://prod.spline.design/zhdTWHix662uuE0y/scene.splinecode">
+                    </spline-viewer>
+                </div>
+            </div>
+            <div id="dialogue-box-container">
+                <div id="dialogue-box">
+                    <p id="dialogue-text">Upload your resume to begin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="interview-controls" class="interview-controls" style="display: none;">
+            <h2>Interview Controls</h2>
+            <div id="status" class="status">Waiting for resume...</div>
+            <button id="speakButton" disabled>Start Speaking</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"></script>
+</body>
+</html>
